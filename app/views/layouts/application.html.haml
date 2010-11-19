@@ -1,0 +1,26 @@
+!!! 5
+%html{ :lang => "en" }
+  %head
+    %title #{@title ? @title : 'Connect Four'} 
+    %meta{'http-equiv' => "Content-Type", :content => "text/html; charset=utf-8"}
+    = stylesheet_link_tag "reset"
+    = stylesheet_link_tag "compiled/application"
+
+    = javascript_include_tag(:defaults)
+    = csrf_meta_tag
+  %body
+    #header
+      #logo
+        %h1= link_to "Connect Four", root_path
+        #nav
+          #nav_top
+            %ul
+              %li= link_to "Home", root_path
+              %li= link_to "New Game", "#"
+    #main
+      #mainAll
+        #mainCenter
+          #flashes
+            - flash.each do |name, msg|
+              = content_tag :div, msg, :id => "flash_#{name}"
+          = yield

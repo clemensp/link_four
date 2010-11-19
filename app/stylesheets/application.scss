@@ -1,0 +1,132 @@
+body {
+  margin: auto;
+  width: 960px;
+  font: 13px/1.5 'Helvetica Neue', Arial, 'Liberation Sans', FreeSans, sans-serif;
+  background: #fff;
+  color: #474342;
+  font-size: 16px;
+}
+
+/* --HEADER-- */
+#header {
+  text-align: center;
+  overflow: hidden;
+  background: #fff;
+  h1 {
+    color: #EB7124;
+    font-size: 35px;
+    padding-top: 20px;
+    a {
+      color: #EB7124;
+      text-decoration: none;
+    }
+  }
+}
+
+#nav {
+  overflow: hidden;
+  background: #FFF;
+  ul {
+    li {
+      display: inline;
+      //float: left;
+      list-style: none;
+      margin-left: 0px;
+      a {
+        color: #474342;
+        text-decoration: none;
+        margin-right: 25px;
+        padding-right: 25px;
+        border-right: 1px solid #484848;
+        &:hover {
+          color: #EB7124;
+        }
+      }
+      &:last-child a {
+        border-right: none;
+        margin-right: 0;
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+
+/** --MAIN-- */
+#main {
+  text-align: center;
+  overflow: hidden;
+  background: #fff;
+  color: #474342;
+  a {
+    color: #777;
+    text-decoration: none;
+    &:hover {
+      color: #EB7124;
+    }
+  }
+
+  #board {
+    table {
+      margin: auto;
+      tr {
+        td {
+          img {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+
+#flash_notice, #flash_error, #flash_alert {
+  padding: 5px 8px;
+  margin: 10px 0;
+}
+
+#flash_notice {
+  background-color: #CFC;
+  border: solid 1px #6C6;
+}
+
+#flash_error, #flash_alert {
+  background-color: #FCC;
+  border: solid 1px #C66;
+}
+
+.fieldWithErrors {
+  display: inline;
+}
+
+.error_messages {
+  width: 400px;
+  border: 2px solid #CF0000;
+  padding: 0px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  font-size: 12px;
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 10px;
+    font-size: 12px;
+    margin: 0;
+    background-color: #c00;
+    color: #fff;
+  }
+  p {
+    margin: 8px 10px;
+  }
+  ul {
+    margin: 0;
+  }
+}
+
+#mainContent {
+  h2 {
+    font-size: 25px;
+  }
+}
+
