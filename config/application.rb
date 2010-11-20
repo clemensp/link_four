@@ -43,5 +43,8 @@ module ConnectFour
       g.template_engine :haml
       g.test_framework :rspec, :fixture => true, :views => false
     end
+
+    config.autoload_paths << File.join(Rails.root, "app", "classes")
+
   end
 end
