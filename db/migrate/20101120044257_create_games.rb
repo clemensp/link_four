@@ -3,6 +3,8 @@ class CreateGames < ActiveRecord::Migration
     create_table :games do |t|
       t.string :board_state
       t.string :turn
+      t.string :ip
+      t.string :game_state
 
       t.timestamps
     end

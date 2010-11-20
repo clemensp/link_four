@@ -3,7 +3,7 @@ body {
   width: 960px;
   font: 13px/1.5 'Helvetica Neue', Arial, 'Liberation Sans', FreeSans, sans-serif;
   background: #fff;
-  color: #474342;
+  color: #FFF;
   font-size: 16px;
 }
 
@@ -17,7 +17,7 @@ body {
     font-size: 35px;
     padding-top: 20px;
     a {
-      color: #EB7124;
+      color: #000;
       text-decoration: none;
     }
   }
@@ -81,8 +81,9 @@ body {
 }
 
 #flash_notice, #flash_error, #flash_alert {
-  padding: 5px 8px;
-  margin: 10px 0;
+  width: 525px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #flash_notice {

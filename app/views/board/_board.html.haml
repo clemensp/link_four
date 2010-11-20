@@ -4,7 +4,10 @@
       %tr
         - 7.times do |col|
           - if connect_four_engine.piece_at(row, col) == :EMPTY
-            %td= link_to image_tag("75px-connect-four-empty.png"), :action => "click_column", :column => col
+            - if game.inprogress?
+              %td= link_to image_tag("75px-connect-four-empty.png"), :action => "click_column", :column => col
+            - else
+              %td= image_tag "75px-connect-four-empty.png"
           - elsif connect_four_engine.piece_at(row, col) == :RED
             %td= image_tag "75px-connect-four-red.png"
           - else

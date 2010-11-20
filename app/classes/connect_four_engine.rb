@@ -12,6 +12,61 @@ class ConnectFourEngine
     @last_played_row = -1
     @last_played_col = -1
   end
+  
+  def initialize(board_state, turn)
+    @board = Array.new(ROWS) { Array.new(COLUMNS) }
+    @move_count = 0
+    populate_board(board_state)
+    @turn = turn.to_sym
+    @last_played_row = -1
+    @last_played_col = -1
+  end 
+
+  def populate_board(board_state)
+    0.upto(ROWS-1) do |row|
+      start_index = row*COLUMNS
+      board_state[start_index, COLUMNS].each_byte.with_index do |c, col|
+        piece = char_to_sym(c.chr)
+        @move_count += 1 unless piece == :EMPTY
+        printf("%d,%d: %s\n", row, col, piece)
+        @board[row][col] = piece
+      end
+    end
+  end
+
+  def char_to_sym(c)
+    piece = :EMPTY
+    if (c == 'R')
+      piece = :RED
+    elsif (c == 'Y')
+      piece = :YELLOW
+    end
+    piece
+  end
+
+  def sym_to_char(sym)
+    char = 'E'
+    if sym == :RED
+      char = 'R'
+    elsif sym == :YELLOW
+      char = 'Y'
+    end
+    char
+  end
+
+  def get_board_state
+    board_state = ""
+    0.upto(ROWS-1) do |row|
+      0.upto(COLUMNS-1) do |col|
+        board_state << sym_to_char(@board[row][col])
+      end
+    end
+    board_state
+  end
+
+  def get_turn
+    @turn
+  end
 
   def piece_at(row, col)
     @board[row][col]

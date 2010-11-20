@@ -1,1 +1,3 @@
-= render :partial => "board/board", :locals => { :connect_four_engine => @connect_four_engine }
+= render :partial => "board/board",   | 
+         :locals => { :game => @game, |
+                      :connect_four_engine => @connect_four_engine }
